@@ -1,0 +1,45 @@
+.notifications-section .hidden-menu {
+  top: 15px ;
+}
+
+.notification-menu {
+  background-color: #141414cb;
+  width: 400px;
+  border: 1px solid var(gray);
+  border: 1px solid var(--gray);
+
+  border-top: 2px solid var(--white);
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.notification-menu .single-notification {
+  border-collapse: collapse;
+  display: flex;
+  padding: 20px;
+  gap: 10px;
+  border: 1px solid var(--gray);
+}
+
+.notification-menu .single-notification:hover {
+  background-color: var(--black);
+  cursor: pointer;
+}
+
+
+.notification-menu .single-notification img {
+  height: 60px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.359);
+}
+
+.notification-menu .single-notification p {
+  font-weight: lighter;
+  font-size: 16px;
+}
+
+.notification-menu .single-notification span{
+  font-weight: lighter;
+  font-size: 12px;
+  opacity: 0.4;
+}

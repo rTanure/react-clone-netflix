@@ -1,0 +1,16 @@
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+}
+
+body {
+  background-color: var(--black);
+}
+
+.hidden {
+  display: none;
+}
+
+.relative {
+  position: relative;
+}
+

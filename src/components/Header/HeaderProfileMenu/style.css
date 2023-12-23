@@ -1,0 +1,44 @@
+.profile-section .hidden-menu {
+  top: 20px !important;
+  right: 17px;
+}
+
+.profile-menu {
+  background-color: #141414e9;
+  padding: 14px;
+  border: 1px solid  var(--gray);
+  width: 230px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.profile-menu > div{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+}
+
+.profile-menu > div span {
+  font-size: 12px;
+}
+
+.profile-menu > div:hover span{
+  text-decoration: underline;
+}
+
+.profile-menu > div img{
+  height: 35px;
+  border-radius: 5px;
+}
+
+.profile-menu > div i{
+  font-size: 20px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 7px;
+  border-radius: 5px;
+}

@@ -1,0 +1,162 @@
+header {
+  height: 68px;
+  width: 100%;
+  
+  padding: 0 5%;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  z-index: 10;
+
+  background: linear-gradient(rgba(20, 20, 20, 0.8), rgba(20, 20, 20, 0.3), rgba(20, 20, 20, 0));
+  color: white;
+
+  transition: 0.8s;
+}
+
+header.dark {
+  background-color: var(--black);
+}
+
+header .left {
+  display: flex;
+  gap: 50px
+}
+
+header ul {
+  display: flex;
+  list-style: none;
+  gap: 16px;
+}
+
+header li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+header li a:hover {
+  opacity: 0.6;
+}
+
+header li a.atual:hover {
+  opacity: 1;
+}
+header li a.atual {
+  font-weight: 500;
+  cursor: default;
+}
+
+header img{
+  height: 25px;
+}
+
+header .logo a{
+  display: flex;
+  align-items: center;
+}
+
+header .right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+header .right .search-section{
+  position: relative;
+  display: flex;
+}
+
+header .right .search-input{
+  position: absolute;
+  right: 0;
+  top: -6px;
+  width: 0px;
+  overflow: hidden;
+  z-index: -1;
+  
+  display: flex;
+  gap: 15px;
+  background-color: var(--black);
+  padding: 7px;
+  opacity: 0;
+  
+  border: 1px solid var(--white);
+  transition: 0.3s ;
+  transition-property: width;
+}
+
+header .right .search-input.opened {
+  display: flex;
+  opacity: 1;
+  width: 300px;
+  z-index: 1;
+}
+
+header .right .search-input i{
+  font-size: 20px;
+}
+
+header .right .search-input.opened input{
+  opacity: 1;
+}
+
+
+header .right .search-input input{
+  transition: 0.6s;
+  opacity: 0;
+  width: 220px;
+  background-color: var(--black);
+  color: var(--white);
+  font-size: 14px;
+  outline: 0;
+  border: 0;
+}
+
+
+header i.header-option {
+  cursor: pointer;
+}
+
+header i {
+  color: white;
+  font-size: 24px;
+  font-size: 300;
+}
+
+header .account-button {
+  display: flex;
+  align-items: center;
+  
+  gap: 8px;
+  cursor: pointer;
+}
+
+header .account-button img{
+  height: 35px;
+  border-radius: 4px;
+  
+}
+
+header .account-button:hover .arrow {
+  transform: rotate(360deg);
+}
+
+header .arrow {
+
+  transform: rotate(180deg);
+  width: 3px;
+  height: 1px;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 7px solid var(--white);
+  transition: 0.3s;
+}
