@@ -20,7 +20,7 @@ export default function HeaderProfileMenu() {
 
 
       <div className="icon-section">
-        <i class="fa-solid fa-pen"></i>
+        <i className="fa-solid fa-pen"></i>
         <span>Gerenciar perfis</span>
       </div>
       <div className="icon-section"></div>

@@ -4,6 +4,8 @@ import "./style.css"
 import HiddenMenu from "./HiddenMenu";
 import HeaderNotification from "./HeaderNotification";
 import HeaderProfileMenu from "./HeaderProfileMenu";
+import NavMenu from "./NavMenu";
+
 
 export default function Header() {
   const [searchInputState, setSearchInputState] = useState(false)
@@ -19,19 +21,11 @@ export default function Header() {
       <div className="left">
         <div className="logo">
           <a href="/">
-            <img src="/imgs/netflix-logo.png" alt="netflix" />
+            <img src="/imgs/netflix-logo.png" alt="netflix" className="big-logo"/>
+            <img src="/imgs/netflix-n-logo.png" alt="netflix" className="small-logo"/>
           </a>
         </div>
-        <nav>
-            <ul>
-              <li><a href="#" className="atual">Início</a></li>
-              <li><a href="#">Séries</a></li>
-              <li><a href="#">Filmes</a></li>
-              <li><a href="#">Bombando</a></li>
-              <li><a href="#">Minha Lista</a></li>
-              <li><a href="#">Navegar por idiomas</a></li>
-            </ul>
-          </nav>
+        <NavMenu />
       </div>
       <div className="right">
         <div className="search-section" onBlur={()=>setSearchInputState(false)}>

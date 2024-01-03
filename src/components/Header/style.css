@@ -20,6 +20,21 @@ header {
   transition: 0.8s;
 }
 
+header > * {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header > * > *{
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
 header.dark {
   background-color: var(--black);
 }
@@ -64,6 +79,10 @@ header .logo a{
   align-items: center;
 }
 
+header .small-logo {
+  display: none;
+}
+
 header .right {
   display: flex;
   align-items: center;
@@ -78,7 +97,8 @@ header .right .search-section{
 header .right .search-input{
   position: absolute;
   right: 0;
-  top: -6px;
+  top: 50%;
+  transform: translateY(-50%);
   width: 0px;
   overflow: hidden;
   z-index: -1;
@@ -96,6 +116,7 @@ header .right .search-input{
 
 header .right .search-input.opened {
   display: flex;
+  align-items: center;
   opacity: 1;
   width: 300px;
   z-index: 1;
@@ -151,7 +172,6 @@ header .account-button:hover .arrow {
 }
 
 header .arrow {
-
   transform: rotate(180deg);
   width: 3px;
   height: 1px;
@@ -159,4 +179,31 @@ header .arrow {
   border-right: 6px solid transparent;
   border-bottom: 7px solid var(--white);
   transition: 0.3s;
+}
+
+@media (max-width: 425px) {
+  header .right .search-section {
+    position: static;
+  }
+
+  header .right .search-input.opened {
+    position: absolute;
+    width: 100vw;
+    height: 80%;
+    top: 50%;
+    right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  header .small-logo {
+    display: block;
+  }
+  header .big-logo {
+    display: none;
+  }
+
+  header .left {
+    gap: 15px;
+  }
 }
