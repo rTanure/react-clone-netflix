@@ -5,6 +5,7 @@
 body {
   background-color: var(--black);
   height: 1000px;
+  color: var(--white);
 }
 
 .hidden {
@@ -13,5 +14,10 @@ body {
 
 .relative {
   position: relative;
+}
+
+.container {
+  padding-left: 5%;
+  padding-right: 5%;
 }
 

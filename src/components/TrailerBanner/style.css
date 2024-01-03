@@ -1,6 +1,8 @@
 section.trailer {
   width: 100%;
   position: relative;
+  max-height: calc(100vh + 70px);
+  overflow: hidden;
 }
 
 section.trailer video {
@@ -14,4 +16,69 @@ section.trailer .banner{
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 255, 0.099);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  
+}
+
+section.trailer .banner .content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2vw;
+}
+
+.trailer .banner-logo img {
+  width: 40vw;
+}
+
+.trailer .banner-classification {
+  display: flex;
+  gap: 1vw;
+  align-items: center;
+}
+
+.trailer .banner-classification svg {
+  width: 2vw;
+}
+
+.trailer .banner-classification span {
+  font-weight: 600;
+  font-size: 1.4vw;
+}
+
+.trailer .banner-description {
+  width: 35vw;
+  font-size: 1.2vw;
+}
+
+.trailer .banner-age-classification {
+  position: absolute;
+  right: 0;
+  text-align: right;
+  top: 35vw;
+}
+
+.trailer .banner-age-classification svg {
+  width: 2vw;
+  height: 2vw;
+  background-color: rgba(88, 88, 88, 0.536);
+  padding: 0.3vw 6vw 0.3vw 0.5vw;
+  box-sizing: content-box;
+  
+  border-left: 0.3vw solid var(--white);
+}
+
+.trailer .banner-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.trailer .blur {
+  margin-left: -5vw;
+  width: 100vw;
+  height: 70px;
+  background: linear-gradient(transparent, var(--black));
 }
