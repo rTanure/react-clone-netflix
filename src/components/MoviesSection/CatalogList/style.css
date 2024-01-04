@@ -1,0 +1,114 @@
+.list {
+  position: relative;
+}
+
+.list h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.list .slide-map {
+  opacity: 0;
+  position: absolute;
+  top: -18px;
+  right: 70px;
+  gap: 3px;
+  z-index: 2;
+  display: flex;
+}
+
+.list:hover .slide-map {
+  opacity: 1;
+}
+
+
+.list .slide-map-location {
+
+  width: 20px;
+  height: 2px;
+  display: block;
+  background-color: var(--white);
+  opacity: 0.3;
+  transition-property: opacity;
+  transition: 0.5s;
+}
+
+.list .slide-map-location.current {
+  opacity: 1;
+}
+
+.list .slide-container {
+  position: relative;
+  height: 200px;
+}
+
+.list button.arrow {
+  display: none;
+  width: 50px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  color: var(--white);
+  font-size: 24px;
+}
+
+.list button.arrow i {
+  transition: 0.2s;
+}
+
+.list button.arrow:hover i {
+  transform: scale(1.3);
+}
+
+.list button.arrow:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+.list:hover .arrow {
+  display: block;
+}
+
+.list .list-spacer {
+  padding: 0 2vw;
+}
+
+.list .slide-content {
+  scroll-behavior: smooth;
+  position: absolute;
+  top: 0;
+  left: 0;
+  gap: 6px;
+  height: 100%;
+  width: calc(100vw - 17px);
+  overflow: hidden;
+
+  display: flex;
+}
+
+.list .arrow-left {
+  position: absolute;
+  left: 0;
+  z-index: 1;
+}
+
+.list .arrow-right {
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+
+.list .slide-content .single-slide-movie {
+  position: relative;
+  cursor: pointer;
+}
+
+.list .slide-content .single-slide-movie img {
+  height: 100%;
+}
+
+.list .scroll-list-spacer {
+  width: 30px;
+  display: block;
+}

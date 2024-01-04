@@ -4,7 +4,7 @@ import "./style.css"
 
 export default function IconButton({Icon, content, className, action, style}) {
   return(
-    <button className={`${className}`} onClick={action} style={style}>
+    <button className={`${className} banner-button`} onClick={action} style={style}>
       {Icon}
       <div className="content-box">{content}</div>
     </button>

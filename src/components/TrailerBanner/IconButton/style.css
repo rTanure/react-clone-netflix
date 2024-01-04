@@ -1,4 +1,4 @@
-button {
+.banner-button {
   display: flex;
   align-items: center;
   gap: 1vw;
@@ -10,20 +10,20 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.banner-button:hover {
   background: rgba(255, 255, 255, 0.7);
 }
 
-button.secondary {
+.banner-button.secondary {
   background-color: rgba(79, 79, 79, 0.5);
   color: var(--white);
 }
 
-button.secondary:hover {
+.banner-button.secondary:hover {
   background-color: rgba(79, 79, 79, 0.3);
 }
 
-button i {
+.banner-button i {
   width: 1vw;
 }
 

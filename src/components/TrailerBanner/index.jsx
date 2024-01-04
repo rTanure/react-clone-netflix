@@ -1,9 +1,10 @@
+import { useEffect, useState } from "react"
+
 import "./style.css"
 
 import Top10Icon from "../../svg/Top10Icon"
 import MaturityRatingIcon from "../../svg/MaturityRatingIcon"
 import IconButton from "./IconButton"
-import { useEffect, useState } from "react"
 
 export default function TrailerBanner() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
@@ -24,7 +25,7 @@ export default function TrailerBanner() {
 
           <div className="banner-classification">
             <Top10Icon />
-            <span>Top 1 em filmes hoje</span>
+            <span>Top 1 em séries hoje</span>
           </div>
 
           <div className="banner-description">  

@@ -1,0 +1,8 @@
+.hidden-movie-card {
+position: absolute;
+top: 0;
+
+  background-color: red;
+  width: 400px;
+  height: 600px;
+}

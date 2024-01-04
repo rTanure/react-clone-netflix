@@ -2,4 +2,7 @@
   --black: #141414;
   --white: #e5e5e5;
   --gray: rgba(137, 137, 137, 0.797);
+  --trans-gray: rgba(137, 137, 137, 0.4);
+  --trans-white: rgba(255, 255, 255, 0.4);
+  --trans-black: rgba(0, 0, 0, 0.4);
 }
