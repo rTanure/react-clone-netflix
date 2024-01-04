@@ -32,6 +32,10 @@ export default function CatalogList({ list, title }) {
     setListComponentWidth(calcListComponentWidth())
   })
 
+  listRef.current.addEventListener("wheel", (e)=>{ 
+    e.preventDefault()
+  })
+
   function moveListLeft() {
     if(currentSlide > 0) setCurrentSlide(currentSlide - 1)
   }
