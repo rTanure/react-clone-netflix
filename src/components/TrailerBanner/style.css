@@ -3,6 +3,7 @@ section.trailer {
   position: relative;
   max-height: calc(100vh + 70px);
   overflow: hidden;
+  z-index: -1;
 }
 
 section.trailer video {

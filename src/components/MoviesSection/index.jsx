@@ -1,8 +1,19 @@
+import { useEffect, useState } from "react"
+
 import "./style.css"
 
 import CatalogList from "./CatalogList"
+import HiddenMovieCard from "./HiddenMovieCard"
 
 export default function MoviesSection() {
+  const [listComponentWidth, setListComponentWidth] = useState() // Largura da thumbnail
+  const [hiddenCardPosition, setHiddenCardPosition] = useState({
+    x: 0,
+    y: 0,
+    class: "closed"
+  })
+  const [cardHover, setCardHover] = useState(false)
+
   let list = []
   let template = {
     title: "",
@@ -16,10 +27,57 @@ export default function MoviesSection() {
   }
   populateList(list, 20, template)
 
+
+  function distTop(el) {
+    var distancia = 0;
+    while(el) {
+        distancia += el.offsetTop;
+        el = el.offsetParent;
+    }
+    return distancia;
+  }
+  
+  function updateHiddenCard(value) {
+    console.log(value)
+    if(!value) {
+      setHiddenCardPosition({
+        x: 0,
+        y: 0,
+        class: "closed"
+      })
+    } else {
+      setTimeout(() => {
+        setHiddenCardPosition({
+          x: value.getBoundingClientRect().left,
+          y: distTop(value),
+          class: "opening"
+        })
+      }, 1000);
+    }
+  }
+
+  useEffect(()=>{
+    updateHiddenCard(cardHover)
+  }, [cardHover])
+
   return(
     <section className="catalog">
-      <div className="catalog-box-box">
-        <CatalogList list={list} title="Mais Assistidos"/>
+      <HiddenMovieCard 
+        setCardHover={setCardHover} 
+        cardHover={cardHover}
+        cardWidth={listComponentWidth} 
+        position={hiddenCardPosition} 
+        listComponentWidth={listComponentWidth} 
+        updateHiddenCard={updateHiddenCard}
+      />
+      <div className="catalog-box">
+        <CatalogList 
+          setListComponentWidth={setListComponentWidth} 
+          listComponentWidth={listComponentWidth} 
+          updateHiddenCard={updateHiddenCard} 
+          list={list} 
+          title="Mais Assistidos"
+        />
       </div>
 
     </section>

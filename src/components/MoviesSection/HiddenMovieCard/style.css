@@ -1,8 +1,32 @@
 .hidden-movie-card {
   position: absolute;
-  top: 0;
+  top: 0 ;
+  left: 60px;
+  z-index: 10;
 
-  background-color: red;
-  width: 400px;
-  height: 600px;
+  /* background-color: red; */
+  width: 300px;
+  transition: 1s;
+  transition-property: width, height;
+}
+
+.hidden-movie-card .card-header {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.hidden-movie-card img {
+  width: 100%;
+}
+
+
+/* .hidden-movie-card.closed {
+  width: 0;
+  height: 0;
+  display: none;
+} */
+
+.hidden-movie-card.closed {
+  display: initial;
 }

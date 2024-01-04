@@ -1,5 +1,5 @@
 .list {
-  position: relative;
+  z-index: 3;
 }
 
 .list h3 {
@@ -14,7 +14,6 @@
   top: -18px;
   right: 70px;
   gap: 3px;
-  z-index: 2;
   display: flex;
 }
 
@@ -81,16 +80,16 @@
   left: 0;
   gap: 6px;
   height: 100%;
-  width: calc(100vw - 17px);
-  overflow: auto;
+  max-width: calc(100vw - 17px);
+  overflow: hidden;
   align-items: center;
 
   display: flex;
 }
 
-.list .slide-content::-webkit-scrollbar {
+/* .list .slide-content::-webkit-scrollbar {
   display: none;
-}
+} */
 
 .list .arrow-left {
   position: absolute;
