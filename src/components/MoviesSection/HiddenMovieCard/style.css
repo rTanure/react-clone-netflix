@@ -1,8 +1,10 @@
 .hidden-movie-card {
   position: absolute;
+  display: hidden;
   top: 0 ;
   left: 60px;
   z-index: 10;
+  transform: translate(-50%, -50%);
 
   /* background-color: red; */
   width: 300px;
@@ -24,9 +26,9 @@
 /* .hidden-movie-card.closed {
   width: 0;
   height: 0;
-  display: none;
+  display: none;  
 } */
 
 .hidden-movie-card.closed {
-  display: initial;
+  display: inherit;
 }

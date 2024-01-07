@@ -28,17 +28,9 @@ export default function MoviesSection() {
   populateList(list, 20, template)
 
 
-  function distTop(el) {
-    var distancia = 0;
-    while(el) {
-        distancia += el.offsetTop;
-        el = el.offsetParent;
-    }
-    return distancia;
-  }
+  
   
   function updateHiddenCard(value) {
-    console.log(value)
     if(!value) {
       setHiddenCardPosition({
         x: 0,
@@ -69,6 +61,7 @@ export default function MoviesSection() {
         position={hiddenCardPosition} 
         listComponentWidth={listComponentWidth} 
         updateHiddenCard={updateHiddenCard}
+        onmouseout={()=>{console.log("kjasdnkajn")}}
       />
       <div className="catalog-box">
         <CatalogList 
