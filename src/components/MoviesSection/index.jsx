@@ -56,14 +56,28 @@ export default function MoviesSection() {
     <section className="catalog">
       <HiddenMovieCard 
         setCardHover={setCardHover} 
-        cardHover={cardHover}
+        cardHover={cardHover} 
         cardWidth={listComponentWidth} 
         position={hiddenCardPosition} 
         listComponentWidth={listComponentWidth} 
-        updateHiddenCard={updateHiddenCard}
-        onmouseout={()=>{console.log("kjasdnkajn")}}
+        updateHiddenCard={updateHiddenCard} 
+        onmouseout={()=>{console.log("kjasdnkajn")}} 
       />
       <div className="catalog-box">
+        <CatalogList 
+          setListComponentWidth={setListComponentWidth} 
+          listComponentWidth={listComponentWidth} 
+          updateHiddenCard={updateHiddenCard} 
+          list={list} 
+          title="Mais Assistidos"
+        />
+        <CatalogList 
+          setListComponentWidth={setListComponentWidth} 
+          listComponentWidth={listComponentWidth} 
+          updateHiddenCard={updateHiddenCard} 
+          list={list} 
+          title="Mais Assistidos"
+        />
         <CatalogList 
           setListComponentWidth={setListComponentWidth} 
           listComponentWidth={listComponentWidth} 

@@ -31,7 +31,6 @@ export default function CatalogList({ list, title, updateHiddenCard, setCardHove
     }
   }
   
-  
 
   function distanceTop(el) {
     var distancia = 0;
@@ -53,8 +52,9 @@ export default function CatalogList({ list, title, updateHiddenCard, setCardHove
       x: distanceLeft(e.target),
       y: distanceTop(e.target),
     }
-    
-    dispatch(displayCard(coords))
+    setTimeout(()=>{
+      dispatch(displayCard(coords))
+    }, 1000)
   }
   
   function calculate() {

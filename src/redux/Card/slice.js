@@ -10,7 +10,7 @@ const initialState = {
     x: 0,
     y: 0
   },
-  cardClass: "closed",
+  cardState: "closed",
   gap: 6
 }
 
@@ -40,16 +40,19 @@ const cardSlice =  createSlice({
       state.numberOfViews = Math.ceil(action.payload/state.thumbsPerView)
     },
     displayCard: (state, action) => {
-
       state.cardPosition = action.payload
-      state.cardClass = "opening"
+      state.cardState = "opened"
+    },
+    closeCard: (state, action) => {
+      state.cardState = "closed"
     }
   }
 })
 
 export const { 
   updateView,
-  displayCard
+  displayCard,
+  closeCard
 } = cardSlice.actions
 
 export default cardSlice.reducer

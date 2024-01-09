@@ -1,21 +1,20 @@
 .hidden-movie-card {
   position: absolute;
-  display: hidden;
+  display: block;
   top: 0 ;
   left: 60px;
   z-index: 10;
   transform: translate(-50%, -50%);
 
-  /* background-color: red; */
-  width: 300px;
-  transition: 1s;
+  background-color: red;
+  transition: 0.5s;
   transition-property: width, height;
+  opacity: 1;
 }
 
 .hidden-movie-card .card-header {
   width: 100%;
   aspect-ratio: 16/9;
-  overflow: hidden;
 }
 
 .hidden-movie-card img {
@@ -30,5 +29,18 @@
 } */
 
 .hidden-movie-card.closed {
-  display: inherit;
+  top: -2000px;
+  left: -2000px;
+  /* display: none; */
+  opacity: 0;
+}
+.hidden-movie-card .card-content {
+  height: 300px;
+  transition: 0.5s;
+  overflow: hidden;
+}
+.hidden-movie-card.closed .card-content {
+  display: block;
+  height: 0;
+  opacity: 0;
 }
