@@ -7,9 +7,12 @@ import "./style.css"
 // Redux
 import { setCardVisibility } from "../../../redux/Card/slice"
 import { useSelector, useDispatch } from "react-redux"
+import IconButton from "./IconButton"
+import MaturityRating from "../../MaturiryRating"
+import SpacialAudio from "../../../svg/SpacialAudio"
 
 export default function HiddenMovieCard({ data, style }) {
-  const { cardPosition, cardState, thumbWidth, cardVisibility } = useSelector(rootReducer => rootReducer.cardReducer)
+  const { cardPosition, thumbWidth, cardVisibility } = useSelector(rootReducer => rootReducer.cardReducer)
   const dispatch = useDispatch() 
 
   // Width variável sem alterar a root
@@ -17,7 +20,6 @@ export default function HiddenMovieCard({ data, style }) {
   const [ altClass, setAltClass ] = useState("")
 
   useEffect(()=>{
-    console.log(thumbWidth)
     if(cardVisibility === false) setWidth(thumbWidth) // estado inicial
     // if(cardVisibility === true) setWidth(400) // estado final
   }, [thumbWidth, cardVisibility])
@@ -45,7 +47,35 @@ export default function HiddenMovieCard({ data, style }) {
         <img src="/imgs/thumb-peakyBlinders.jpg" alt="" />
       </div>
       <div className="card-content">
-        <h1>Título da serie</h1>
+        <div className="card-content-header">
+          <div className="left">
+            <IconButton iconClass="fa-solid fa-play" className="white"/>
+            <IconButton iconClass="fa-solid fa-plus" className=""/>
+            <IconButton iconClass="fa-solid fa-thumbs-up" className=""/>
+          </div>
+          <div className="right">
+            <IconButton iconClass="fa-solid fa-chevron-down" className=""/>
+          </div>
+        </div>
+        <div className="card-content-relevance">
+          <p>93% relevante</p>
+        </div>
+        <div className="card-content-infos">
+          <MaturityRating age={10} />
+          <div className="duration">
+            <p>2h 15min</p>
+          </div>
+          <span className="quality">HD</span>
+          <SpacialAudio style={{width: "80px"}} />
+        </div>
+        <div className="card-content-categories">
+          <span className="divider"></span>
+          <p>Empolgantes</p>
+          <span className="divider"></span>
+          <p>Reino Escondido</p>
+          <span className="divider"></span>
+          <p>Mundo épico</p>
+        </div>
       </div>
     </div>
   )

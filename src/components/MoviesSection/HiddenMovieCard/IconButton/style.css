@@ -1,0 +1,28 @@
+.icon-button {
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  font-size: 12px;
+  background-color: var(--trans-dark);
+  border: 2px solid var(--trans-white);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.icon-button:hover {
+  opacity: 1;
+}
+
+
+
+.icon-button.white {
+  border: 0;
+  opacity: 1;
+  color: var(--black);
+  /* font-size: 12px; */
+  background-color: var(--white);
+}

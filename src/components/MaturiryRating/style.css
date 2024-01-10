@@ -1,0 +1,14 @@
+span.maturity-rating {
+  display: block;
+  width: 30px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  background-color: red;
+  font-weight: bold;
+  border-radius: 5px;
+
+  color: white;
+}

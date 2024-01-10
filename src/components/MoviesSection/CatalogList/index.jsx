@@ -32,14 +32,6 @@ export default function CatalogList({ list, title }) {
       setCurrentSlide(0)
     }
   }
-  
-
-
-
-  // Mouse entra em uma thumb
-  function handleThumbMouseIn(e) {
-    
-  }
 
   // Controle do resize da tela
   const [resizeTimeout, setResizeTimeout] = useState(false)
@@ -57,8 +49,6 @@ export default function CatalogList({ list, title }) {
     window.addEventListener("resize", handleResize);
     return () => {window.removeEventListener("resize", handleResize)}
   }, [resizeTimeout]);
-
-  
   
   return (
     <div className="list">
@@ -76,9 +66,9 @@ export default function CatalogList({ list, title }) {
         <button className={`arrow-right arrow ${(currentSlide == numberOfViews -1) ? "hiddenp" : 0}`} onClick={moveListRight}><i className="fa-solid fa-chevron-right"></i></button>
         <div className="slide-content" ref={listRef}>
           <div className="list-spacer"></div>
-          {list.map((e, index)=>{
+          {list?.map((e, index)=>{
             return (
-              <MovieThumb key={index}/>
+              <MovieThumb movie={e} key={index}/>
             )
           })}
           <div className="list-spacer"></div>

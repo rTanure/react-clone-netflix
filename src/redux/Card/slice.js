@@ -7,8 +7,8 @@ const initialState = {
   thumbWidth: 0,
 
   cardPosition: {
-    x: 0,
-    y: 0
+    x: 300,
+    y: 300
   },
   cardState: "closed",
   cardVisibility: false,
@@ -20,6 +20,7 @@ const cardSlice =  createSlice({
   initialState,
   reducers: {
     updateView: (state, action) => {
+
       // Thumbs Per View
       const w = document.body.clientWidth
       if (w <= 500) {

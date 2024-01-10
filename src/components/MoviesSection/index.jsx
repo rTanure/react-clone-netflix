@@ -1,32 +1,50 @@
 import { useEffect, useState } from "react"
+import { useSelector } from "react-redux"
 
 import "./style.css"
 
 import CatalogList from "./CatalogList"
 import HiddenMovieCard from "./HiddenMovieCard"
 
+import movies_data from "../../data/movies"
+
 export default function MoviesSection() {
-  let list = []
-  let template = {
-    title: "",
-  }
+  const { cardVisibility } = useSelector(rootReducer => rootReducer.cardReducer)
+  const [movieLists, setMovieLists] = useState([])
 
-  function populateList(list, qtd, template) {
-    for(let c = 0; c < qtd; c++) {
-      let copy = {...template}
-      copy.key = c
-      list.push(copy)
+
+  const createList = () => {
+    // const MAX = 10
+    // const MIN = 5
+    // const size = Math.floor(Math.random() * (MAX - MIN + 1)) + MIN;
+
+    const size = 25
+
+    let list = []
+
+    for(let c = 0; c < size; c++) {
+      list.push(movies_data[Math.floor(Math.random() * (movies_data.length))])
     }
+    return list
   }
-  populateList(list, 20, template)
 
+  useEffect(()=>{
+    const n = 5
+    let list = []
+    for(let c = 0; c < n; c++) {
+      list.push(createList())
+    }
+    setMovieLists(list)
+  }, [movies_data])
+  
   return(
     <section className="catalog">
-      <HiddenMovieCard />
+      { cardVisibility ? <HiddenMovieCard /> : null }
       <div className="catalog-box">
-        <CatalogList list={list} title="Mais Assistidos" />
-        <CatalogList list={list} title="Mais Assistidos" />
-        <CatalogList list={list} title="Mais Assistidos" />
+        {movieLists[0] ? <CatalogList list={movieLists[0]} title="Mais Assistidos" /> : null}
+        {movieLists[1] ? <CatalogList list={movieLists[1]} title="Mais Assistidos" /> : null}
+        {movieLists[2] ? <CatalogList list={movieLists[2]} title="Mais Assistidos" /> : null}
+        {movieLists[3] ? <CatalogList list={movieLists[3]} title="Mais Assistidos" /> : null}
       </div>
 
     </section>

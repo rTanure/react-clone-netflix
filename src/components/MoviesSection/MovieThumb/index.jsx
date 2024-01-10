@@ -5,7 +5,7 @@ import "./style.css"
 
 import { setCardPosition, setCardVisibility } from "../../../redux/Card/slice"
 
-export default function MovieThumb() {
+export default function MovieThumb({movie}) {
   const {thumbWidth} = useSelector(rootReducer => rootReducer.cardReducer)
   const dispatch = useDispatch()
   
@@ -45,7 +45,7 @@ export default function MovieThumb() {
       className="movie-thumb" 
       style={{width:`${thumbWidth}px`}}
     >
-      <img src="/imgs/thumb-peakyBlinders.jpg" style={{width:`${thumbWidth}px`}} alt="" />
+      <img src={movie.thumb} style={{width:`${thumbWidth}px`}} alt="" />
     </div>
   )
 }

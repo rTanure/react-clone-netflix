@@ -4,8 +4,10 @@
   --gray: rgba(137, 137, 137, 0.797);
   --trans-gray: rgba(137, 137, 137, 0.4);
   --trans-white: rgba(255, 255, 255, 0.4);
+  --trans-dark: rgba(137, 137, 137, 0.13);
   --trans-black: rgba(0, 0, 0, 0.4);
+  --green: #46d369;
 
-  --fast-animation-time: 0.3s;
+  --fast-animation-time: 0.4s;
   --fastt-animation-time: 0.2s;
 }
