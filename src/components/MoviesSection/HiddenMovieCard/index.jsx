@@ -1,30 +1,43 @@
+// React
 import { useEffect, useState } from "react"
-import { closeCard } from "../../../redux/Card/slice"
+
+// Cs
 import "./style.css"
+
+// Redux
+import { setCardVisibility } from "../../../redux/Card/slice"
 import { useSelector, useDispatch } from "react-redux"
 
-export default function HiddenMovieCard({ data, style, position, updateHiddenCard, cardWidth }) {
-  const { cardPosition, cardState, thumbWidth } = useSelector(rootReducer => rootReducer.cardReducer)
+export default function HiddenMovieCard({ data, style }) {
+  const { cardPosition, cardState, thumbWidth, cardVisibility } = useSelector(rootReducer => rootReducer.cardReducer)
+  const dispatch = useDispatch() 
+
+  // Width variável sem alterar a root
   const [ width, setWidth ] = useState(thumbWidth)
-  const dispatch = useDispatch()
 
   useEffect(()=>{
-    if(cardState === "closed") setWidth(thumbWidth)
-    if(cardState === "opened") setWidth(350)
-  }, [thumbWidth, cardState])
+    console.log(thumbWidth)
+    if(cardVisibility === false) setWidth(thumbWidth) // estado inicial
+    // if(cardVisibility === true) setWidth(400) // estado final
+  }, [thumbWidth, cardVisibility])
 
+  // Mouse saiu do card flutuante
   function handleMouseLeave(e) {
-    dispatch(closeCard())
+    dispatch(setCardVisibility(false))
   }
 
   return (
-    <div onMouseLeave={()=>handleMouseLeave()} className={`hidden-movie-card ${style} ${cardState}`} style={{
-      left: cardPosition.x,
-      top: cardPosition.y,
-      width: `${width}px`
-    }}>
+    <div 
+      onMouseLeave={handleMouseLeave} 
+      className={`hidden-movie-card ${cardVisibility ? "" : "hidden"}`} 
+      style={{
+        left: cardPosition.x,
+        top: cardPosition.y,
+        width: `${width}px`
+      }}
+    >
       <div className="card-header">
-        <img src="/imgs/thumb-stranger-things.png" alt="" />
+        <img src="/imgs/thumb-peakyBlinders.jpg" alt="" />
       </div>
       <div className="card-content">
         <h1>Título da serie</h1>

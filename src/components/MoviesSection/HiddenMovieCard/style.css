@@ -1,15 +1,42 @@
+@keyframes open-hidden-menu-description {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: 200px;
+    opacity: 1;
+  }
+}
+
+@keyframes open-hidden-menu-total {
+  from {
+  }
+  to {
+    width: 300px;
+  }
+}
+
 .hidden-movie-card {
+  cursor: pointer;
   position: absolute;
-  display: block;
-  top: 0 ;
+
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+
+  border-radius: 7px;
+
+  overflow: hidden;
+  
+  top: 5 ;
   left: 60px;
   z-index: 10;
   transform: translate(-50%, -50%);
 
-  background-color: red;
+  background-color: var(--black);
   transition: 0.5s;
   transition-property: width, height;
   opacity: 1;
+  animation: open-hidden-menu-total var(--fast-animation-time) forwards;
 }
 
 .hidden-movie-card .card-header {
@@ -21,26 +48,7 @@
   width: 100%;
 }
 
-
-/* .hidden-movie-card.closed {
-  width: 0;
-  height: 0;
-  display: none;  
-} */
-
-.hidden-movie-card.closed {
-  top: -2000px;
-  left: -2000px;
-  /* display: none; */
-  opacity: 0;
-}
-.hidden-movie-card .card-content {
-  height: 300px;
-  transition: 0.5s;
+.card-content {
   overflow: hidden;
-}
-.hidden-movie-card.closed .card-content {
-  display: block;
-  height: 0;
-  opacity: 0;
+  animation: open-hidden-menu-description var(--fast-animation-time) forwards;
 }

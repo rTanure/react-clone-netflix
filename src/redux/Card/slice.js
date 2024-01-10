@@ -11,6 +11,7 @@ const initialState = {
     y: 0
   },
   cardState: "closed",
+  cardVisibility: false,
   gap: 6
 }
 
@@ -45,6 +46,12 @@ const cardSlice =  createSlice({
     },
     closeCard: (state, action) => {
       state.cardState = "closed"
+    },
+    setCardVisibility: (state, action) => {
+      state.cardVisibility = action.payload
+    },
+    setCardPosition: (state, action) => {
+      state.cardPosition = action.payload
     }
   }
 })
@@ -52,7 +59,9 @@ const cardSlice =  createSlice({
 export const { 
   updateView,
   displayCard,
-  closeCard
+  closeCard,
+  setCardVisibility,
+  setCardPosition
 } = cardSlice.actions
 
 export default cardSlice.reducer

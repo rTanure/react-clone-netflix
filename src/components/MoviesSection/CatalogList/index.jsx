@@ -1,15 +1,17 @@
 import { useRef, useState, useEffect } from "react"
 import "./style.css"
 import { useDispatch, useSelector } from "react-redux"
-import { displayCard, updateView } from "../../../redux/Card/slice"
+import { displayCard, setCardPosition, setCardVisibility, updateView } from "../../../redux/Card/slice"
+import MovieThumb from "../MovieThumb"
 
-export default function CatalogList({ list, title, updateHiddenCard, setCardHover }) {
+export default function CatalogList({ list, title }) {
   
   const {thumbWidth, numberOfViews, gap} = useSelector(rootReducer => rootReducer.cardReducer)
   const listRef = useRef()
   
   const [currentSlide, setCurrentSlide] = useState(0)
   
+  // Altera o scroll da lista de acordo com a posição do slide
   useEffect(()=>{
     let viewArea = document.body.clientWidth - 2*(document.body.clientWidth*0.05) - gap
     listRef.current.scrollLeft = currentSlide * viewArea
@@ -32,32 +34,11 @@ export default function CatalogList({ list, title, updateHiddenCard, setCardHove
   }
   
 
-  function distanceTop(el) {
-    var distancia = 0;
-    while(el) {
-        distancia += el.offsetTop;
-        el = el.offsetParent;
-    }
-    distancia = distancia + thumbWidth * 9/32
-    return distancia;
-  }
-  function distanceLeft(el) {
-    var distancia = 0;
-    distancia = el.getBoundingClientRect().left  + thumbWidth /2
-    return distancia;
-  }
 
+
+  // Mouse entra em uma thumb
   function handleThumbMouseIn(e) {
-    const coords = {
-      x: distanceLeft(e.target),
-      y: distanceTop(e.target),
-    }
-    setTimeout(()=>{
-      dispatch(displayCard(coords))
-    }, 1000)
-  }
-  
-  function calculate() {
+    
   }
 
   // Controle do resize da tela
@@ -97,10 +78,7 @@ export default function CatalogList({ list, title, updateHiddenCard, setCardHove
           <div className="list-spacer"></div>
           {list.map((e, index)=>{
             return (
-              <div onMouseEnter={(e)=>handleThumbMouseIn(e)} key={index} className="single-slide-movie hidden-movie-card-parent" style={{width:`${thumbWidth}px`}}>
-                <img src="/imgs/thumb-stranger-things.png"   style={{width:`${thumbWidth}px`}} alt={e.key} />
-                {/* <HiddenMovieCard /> */}
-              </div>
+              <MovieThumb key={index}/>
             )
           })}
           <div className="list-spacer"></div>

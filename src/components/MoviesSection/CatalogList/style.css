@@ -103,16 +103,6 @@
   z-index: 1;
 }
 
-.list .slide-content .single-slide-movie {
-  margin-top: 0px;
-  position: relative;
-  cursor: pointer;
-}
-
-.list .slide-content .single-slide-movie img {
-  height: 100%;
-}
-
 .list .scroll-list-spacer {
   width: 30px;
   display: block;

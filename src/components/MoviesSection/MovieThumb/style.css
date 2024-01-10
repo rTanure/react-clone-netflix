@@ -1,0 +1,9 @@
+.movie-thumb {
+  cursor: pointer;
+
+}
+
+.movie-thumb img {
+  width: 100%;
+  border-radius: 6px;
+}
