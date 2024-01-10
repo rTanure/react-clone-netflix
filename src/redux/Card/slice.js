@@ -12,7 +12,8 @@ const initialState = {
   },
   cardState: "closed",
   cardVisibility: false,
-  gap: 6
+  gap: 6,
+  movie: {}
 }
 
 const cardSlice =  createSlice({
@@ -53,6 +54,9 @@ const cardSlice =  createSlice({
     },
     setCardPosition: (state, action) => {
       state.cardPosition = action.payload
+    },
+    setMovie: (state, action) => {
+      state.movie = action.payload
     }
   }
 })
@@ -62,7 +66,8 @@ export const {
   displayCard,
   closeCard,
   setCardVisibility,
-  setCardPosition
+  setCardPosition,
+  setMovie
 } = cardSlice.actions
 
 export default cardSlice.reducer

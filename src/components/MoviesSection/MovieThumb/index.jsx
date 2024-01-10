@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux"
 
 import "./style.css"
 
-import { setCardPosition, setCardVisibility } from "../../../redux/Card/slice"
+import { displayCard, setCardPosition, setCardVisibility, setMovie } from "../../../redux/Card/slice"
 
 export default function MovieThumb({movie}) {
   const {thumbWidth} = useSelector(rootReducer => rootReducer.cardReducer)
@@ -30,6 +30,7 @@ export default function MovieThumb({movie}) {
     timeoutRef.current = setTimeout(()=>{
       dispatch(setCardVisibility(true))
       dispatch(setCardPosition(cardCoords))
+      dispatch(setMovie(movie))
     }, 600)
     
   }

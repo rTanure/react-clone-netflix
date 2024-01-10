@@ -12,7 +12,7 @@ import MaturityRating from "../../MaturiryRating"
 import SpacialAudio from "../../../svg/SpacialAudio"
 
 export default function HiddenMovieCard({ data, style }) {
-  const { cardPosition, thumbWidth, cardVisibility } = useSelector(rootReducer => rootReducer.cardReducer)
+  const { cardPosition, thumbWidth, cardVisibility, movie } = useSelector(rootReducer => rootReducer.cardReducer)
   const dispatch = useDispatch() 
 
   // Width variável sem alterar a root
@@ -44,7 +44,7 @@ export default function HiddenMovieCard({ data, style }) {
       }}
     >
       <div className="card-header">
-        <img src="/imgs/thumb-peakyBlinders.jpg" alt="" />
+        <img src={movie.thumb} alt="" />
       </div>
       <div className="card-content">
         <div className="card-content-header">
@@ -58,23 +58,23 @@ export default function HiddenMovieCard({ data, style }) {
           </div>
         </div>
         <div className="card-content-relevance">
-          <p>93% relevante</p>
+          <p>{movie.relevance}% relevante</p>
         </div>
         <div className="card-content-infos">
-          <MaturityRating age={10} />
+          <MaturityRating age={movie.age_restriction} />
           <div className="duration">
-            <p>2h 15min</p>
+            {(movie.type == "movie") ? (<p>{Math.floor(movie.duration / 60)}h {movie.duration % 60}min</p>) : (<p>{movie.num_episodes} episódios</p>)}
+            
           </div>
           <span className="quality">HD</span>
           <SpacialAudio style={{width: "80px"}} />
         </div>
         <div className="card-content-categories">
+          <p>{movie.category[0]}</p>
           <span className="divider"></span>
-          <p>Empolgantes</p>
+          <p>{movie.category[1]}</p>
           <span className="divider"></span>
-          <p>Reino Escondido</p>
-          <span className="divider"></span>
-          <p>Mundo épico</p>
+          <p>{movie.category[2]}</p>
         </div>
       </div>
     </div>
