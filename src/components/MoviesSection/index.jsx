@@ -29,7 +29,7 @@ export default function MoviesSection() {
   }
 
   useEffect(()=>{
-    const n = 5
+    const n = 10
     let list = []
     for(let c = 0; c < n; c++) {
       list.push(createList())
@@ -42,9 +42,13 @@ export default function MoviesSection() {
       { cardVisibility ? <HiddenMovieCard /> : null }
       <div className="catalog-box">
         {movieLists[0] ? <CatalogList list={movieLists[0]} title="Mais Assistidos" /> : null}
-        {movieLists[1] ? <CatalogList list={movieLists[1]} title="Mais Assistidos" /> : null}
-        {movieLists[2] ? <CatalogList list={movieLists[2]} title="Mais Assistidos" /> : null}
-        {movieLists[3] ? <CatalogList list={movieLists[3]} title="Mais Assistidos" /> : null}
+        {movieLists[1] ? <CatalogList list={movieLists[1]} title="Recomendados para você" /> : null}
+        {movieLists[2] ? <CatalogList list={movieLists[2]} title="Premiados" /> : null}
+        {movieLists[3] ? <CatalogList list={movieLists[3]} title="Clássico Atemporal" /> : null}
+        {movieLists[4] ? <CatalogList list={movieLists[4]} title="Inovadores" /> : null}
+        {movieLists[5] ? <CatalogList list={movieLists[5]} title="Suspenses" /> : null}
+        {movieLists[6] ? <CatalogList list={movieLists[6]} title="Top hoje" /> : null}
+        {movieLists[7] ? <CatalogList list={movieLists[7]} title="Populares em sua região" /> : null}
       </div>
 
     </section>
