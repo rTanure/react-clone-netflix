@@ -14,6 +14,7 @@ export default function HiddenMovieCard({ data, style }) {
 
   // Width variável sem alterar a root
   const [ width, setWidth ] = useState(thumbWidth)
+  const [ altClass, setAltClass ] = useState("")
 
   useEffect(()=>{
     console.log(thumbWidth)
@@ -23,13 +24,17 @@ export default function HiddenMovieCard({ data, style }) {
 
   // Mouse saiu do card flutuante
   function handleMouseLeave(e) {
-    dispatch(setCardVisibility(false))
+    setAltClass("closing")
+    setTimeout(() => {
+      dispatch(setCardVisibility(false))
+      setAltClass("")
+    }, 300);
   }
 
   return (
     <div 
       onMouseLeave={handleMouseLeave} 
-      className={`hidden-movie-card ${cardVisibility ? "" : "hidden"}`} 
+      className={`hidden-movie-card ${cardVisibility ? "" : "hidden"} ${ altClass }`} 
       style={{
         left: cardPosition.x,
         top: cardPosition.y,

@@ -6,5 +6,6 @@
   --trans-white: rgba(255, 255, 255, 0.4);
   --trans-black: rgba(0, 0, 0, 0.4);
 
-  --fast-animation-time: 0.3s
+  --fast-animation-time: 0.3s;
+  --fastt-animation-time: 0.2s;
 }

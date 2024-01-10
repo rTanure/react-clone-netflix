@@ -30,7 +30,7 @@ export default function MovieThumb() {
     timeoutRef.current = setTimeout(()=>{
       dispatch(setCardVisibility(true))
       dispatch(setCardPosition(cardCoords))
-    }, 1000)
+    }, 600)
     
   }
 
