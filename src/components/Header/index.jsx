@@ -61,7 +61,7 @@ export default function Header() {
         </div>
         <div className="profile-section relative parent-hidden-menu">
           <div className="account-button">
-            <img src="/imgs/profile-pic.jpg" alt="" />
+            <img src="https://occ-0-1775-1380.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABZUJP6YZ91dji0qHO-1LebMprKqC8U6_jrdR1fHnzNfGAlDUMJ7QYEwavmNxBepU4zTpCwDE2elKm-RLQWjF2QNmQ6PJa9M.png?r=54a" alt="" />
             <div className="arrow"></div>
           </div>
           <HiddenMenu Component={HeaderProfileMenu} />
