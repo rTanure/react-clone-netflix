@@ -6,14 +6,32 @@ import HeaderNotification from "./HeaderNotification";
 import HeaderProfileMenu from "./HeaderProfileMenu";
 import NavMenu from "./NavMenu";
 
+import { setCardVisibility } from "../../redux/Card/slice";
 
 export default function Header() {
   const [searchInputState, setSearchInputState] = useState(false)
   
   const [pageTop, setPageTop] = useState(document.documentElement.scrollTop == 0)
   window.addEventListener("scroll", ()=>{
-    setPageTop(document.documentElement.scrollTop == 0)
+    
   })
+  
+  const [scrollTimeOut, setScrollTimeout] = useState(false)
+  useEffect(() => {
+    const handleResize = () => {
+      if(!scrollTimeOut) {
+        setPageTop(document.documentElement.scrollTop == 0)
+
+        setScrollTimeout(true);
+        setTimeout(() => {
+          setScrollTimeout(false);
+        }, 10);
+      }
+    };
+    window.addEventListener("scroll", handleResize);
+    return () => {window.removeEventListener("scroll", handleResize)}
+  }, [scrollTimeOut]);
+
   useEffect(() => {}, [pageTop])
 
   return(
