@@ -35,7 +35,7 @@ export default function Header() {
   useEffect(() => {}, [pageTop])
 
   return(
-    <header className={(document.documentElement.scrollTop == 0) ? "" : "dark" }>
+    <header className={(document.documentElement.scrollTop == 0) ? "top" : "dark" }>
       <div className="left">
         <div className="logo">
           <a href="/">
