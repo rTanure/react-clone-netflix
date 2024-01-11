@@ -1,11 +1,11 @@
 section.catalog{
   width: 100%;
   /* position: absolute; */
-  margin-top: -10vw;
+  margin-top: -7.4vw;
 }
 
 section.catalog .catalog-box {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 50px;
 }
