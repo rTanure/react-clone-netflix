@@ -62,7 +62,6 @@
   transform: translate(-50%, -50%);
 
   background-color: var(--black);
-  transition: 0.5s;
   opacity: 1;
   animation: open-hidden-menu-total var(--fast-animation-time) forwards;
 }
@@ -112,7 +111,6 @@
   align-items: center;
   gap: 10px;
 }
-
 
 .card-content .card-content-infos .duration {
   font-weight: 600;
