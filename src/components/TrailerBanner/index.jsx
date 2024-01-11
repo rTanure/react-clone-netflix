@@ -18,29 +18,28 @@ export default function TrailerBanner() {
       <video src="./videos/trailer-peakyBlinders.mp4" autoPlay muted loop></video>
       <div className="banner container">
         <div className="content">
+          <div>
 
-          <div className="banner-logo">
-            <img src="./imgs/peaky-blinders-logo.png" alt="peaky blinders" />
+            <div className="banner-logo">
+              <img src="./imgs/peaky-blinders-logo.png" alt="peaky blinders" />
+            </div>
+
+
+            <div className="banner-description">  
+              <p>Uma notória gangue da Inglaterra de 1919 ascende no submundo liderada pelo cruel Tommy Shelby, um criminoso disposto a subir na vida a qualquer preço.</p>
+            </div>
+
+            <div className="banner-buttons">
+                <IconButton Icon={(<i className="fa-solid fa-play"></i>)} content="Assistir" action={()=>alert("Assistir")}/>
+                <IconButton Icon={(<i className="fa-solid fa-info"></i>)} content="Mais informações" action={()=>alert("Mais informações")} className="secondary"/>
+            </div>
           </div>
 
-          <div className="banner-classification">
-            <Top10Icon />
-            <span>Top 1 em séries hoje</span>
-          </div>
 
-          <div className="banner-description">  
-            <p>Uma notória gangue da Inglaterra de 1919 ascende no submundo liderada pelo cruel Tommy Shelby, um criminoso disposto a subir na vida a qualquer preço.</p>
-          </div>
-
-          <div className="banner-buttons">
-              <IconButton Icon={(<i className="fa-solid fa-play"></i>)} content="Assistir" action={()=>alert("Assistir")}/>
-              <IconButton Icon={(<i className="fa-solid fa-info"></i>)} content="Mais informações" action={()=>alert("Mais informações")} className="secondary"/>
-          </div>
-
+        </div>
           <div className="banner-age-classification">
             <MaturityRatingIcon />
           </div>
-        </div>
         <div className="blur">
 
         </div>

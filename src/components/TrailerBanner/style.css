@@ -16,7 +16,7 @@ section.trailer .banner{
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 255, 0.099);
+  background-color: rgba(0, 0, 0, 0.099);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -25,14 +25,37 @@ section.trailer .banner{
 
 section.trailer .banner .content {
   flex: 1;
+  height: 100%;
+  background-color: red;
+}
+
+section.trailer .banner .content > div{
+  position: absolute;
+  bottom: 12.5vw;
+  flex: 1;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  gap: 2vw;
+  gap: 1vw;
+}
+
+@keyframes close-img {
+  0% {
+    width: 40vw;
+
+  }
+  70% {
+    width: 40vw;
+  }
+
+  100% {
+    width: 30vw;
+  }
 }
 
 .trailer .banner-logo img {
-  width: 40vw;
+  /* width: 40vw; */
+  animation: close-img 5s forwards;
 }
 
 .trailer .banner-classification {
@@ -50,9 +73,30 @@ section.trailer .banner .content {
   font-size: 1.4vw;
 }
 
+@keyframes close-description {
+  0% {
+  }
+  70% {
+    font-size: 1.2vw;
+    height: 6vw;
+    width: 35vw;
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    font-size: 0;
+    height: 0;
+    width: 0;
+  }
+}
+
 .trailer .banner-description {
+  overflow: hidden;
+  height: 6vw;
   width: 35vw;
   font-size: 1.2vw;
+  animation: close-description 5s forwards;
 }
 
 .trailer .banner-age-classification {
@@ -66,7 +110,7 @@ section.trailer .banner .content {
   width: 2vw;
   height: 2vw;
   background-color: rgba(88, 88, 88, 0.536);
-  padding: 0.3vw 6vw 0.3vw 0.5vw;
+  padding: 0.3vw 4vw 0.3vw 0.5vw;
   box-sizing: content-box;
   
   border-left: 0.3vw solid var(--white);
@@ -74,7 +118,7 @@ section.trailer .banner .content {
 
 .trailer .banner-buttons {
   display: flex;
-  gap: 20px;
+  gap: 2vw;
 }
 
 .trailer .blur {

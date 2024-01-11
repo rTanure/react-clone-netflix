@@ -3,11 +3,27 @@
   align-items: center;
   gap: 1vw;
   color: var(--black);
-  padding: 0.5vw 2vw;
+  padding: 0.6vw 2vw;
   font-size: 1.2vw;
+  font-weight: 600;
   background-color: var(--white);
   border-radius: 0.3vw;
   cursor: pointer;
+}
+
+.banner-button i {
+  font-size: 1.6vw;
+}
+
+.banner-button i.fa-info {
+  font-size: 0.9vw;
+  border: 0.17vw solid var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  width: 1.8vw;
+  aspect-ratio: 1;
 }
 
 .banner-button:hover {
